@@ -1,4 +1,4 @@
-module github.com/suyuan32/goctls
+module github.com/zhangbao138208/goctls
 
 go 1.20
 
@@ -19,10 +19,12 @@ require (
 	github.com/spf13/cobra v1.7.0
 	github.com/spf13/pflag v1.0.5
 	github.com/stretchr/testify v1.8.4
+	github.com/suyuan32/goctls v1.6.0
 	github.com/suyuan32/simple-admin-common v1.1.3
 	github.com/withfig/autocomplete-tools/integrations/cobra v1.2.1
 	github.com/zeromicro/antlr v0.0.1
 	github.com/zeromicro/go-zero v1.5.5
+	github.com/zeromicro/go-zero/tools/goctl v1.5.5
 	golang.org/x/text v0.13.0
 )
 
@@ -39,7 +41,6 @@ require (
 	github.com/hashicorp/hcl/v2 v2.16.2 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/jhump/protoreflect v1.15.1 // indirect
-	github.com/kr/pretty v0.2.1 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.18 // indirect
 	github.com/mattn/go-runewidth v0.0.13 // indirect
@@ -59,6 +60,5 @@ require (
 	golang.org/x/sys v0.11.0 // indirect
 	golang.org/x/tools v0.8.1-0.20230428195545-5283a0178901 // indirect
 	google.golang.org/protobuf v1.31.0 // indirect
-	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )

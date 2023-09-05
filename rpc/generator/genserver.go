@@ -8,18 +8,29 @@ import (
 
 	"github.com/zeromicro/go-zero/core/collection"
 
-	conf "github.com/suyuan32/goctls/config"
-	"github.com/suyuan32/goctls/rpc/parser"
-	"github.com/suyuan32/goctls/util"
-	"github.com/suyuan32/goctls/util/format"
-	"github.com/suyuan32/goctls/util/pathx"
-	"github.com/suyuan32/goctls/util/stringx"
+	conf "github.com/zeromicro/go-zero/tools/goctl/config"
+	"github.com/zeromicro/go-zero/tools/goctl/rpc/parser"
+	"github.com/zeromicro/go-zero/tools/goctl/util"
+	"github.com/zeromicro/go-zero/tools/goctl/util/format"
+	"github.com/zeromicro/go-zero/tools/goctl/util/pathx"
+	"github.com/zeromicro/go-zero/tools/goctl/util/stringx"
 )
 
 const functionTemplate = `
 {{if .hasComment}}{{.comment}}{{end}}
 func (s *{{.server}}Server) {{.method}} ({{if .notStream}}ctx context.Context,{{if .hasReq}} in {{.request}}{{end}}{{else}}{{if .hasReq}} in {{.request}},{{end}}stream {{.streamBody}}{{end}}) ({{if .notStream}}{{.response}},{{end}}error) {
-	l := {{.logicPkg}}.New{{.logicName}}({{if .notStream}}ctx,{{else}}stream.Context(),{{end}}s.svcCtx)
+	{{if .hasLock}}
+    mtx,err := s.svcCtx.DLock.NewMutex(	fmt.Sprintf("%v:%v","{{.lockPrefix}}",in.{{.lockKey}}), mutex.Expiry(time.Second*time.Duration({{.lockTimeout}})), mutex.Factor(0.30))
+	if err != nil {
+		logx.WithContext(ctx).Error(err)
+		return nil, err
+	}
+	defer mtx.Unlock()
+	ctx, cancel := context.WithCancel(context.TODO())
+	defer cancel()
+	mtx.Heartbeat(ctx)
+    {{end}}
+    l := {{.logicPkg}}.New{{.logicName}}({{if .notStream}}ctx,{{else}}stream.Context(),{{end}}s.svcCtx)
 	return l.{{.method}}({{if .hasReq}}in{{if .stream}} ,stream{{end}}{{else}}{{if .stream}}stream{{end}}{{end}})
 }
 `
@@ -200,22 +211,34 @@ func (g *Generator) genFunctions(goPackage string, service parser.Service, multi
 			logicName = fmt.Sprintf("%sLogic", stringx.From(rpc.Name).ToCamel())
 		}
 
+		key, prefix, timeout := GetLockKey(rpc)
+		if prefix == "" {
+			prefix = "go-zero:dl:"
+		}
+		if timeout == 0 {
+			timeout = 2
+		}
+
 		comment := parser.GetComment(rpc.Doc())
 		streamServer := fmt.Sprintf("%s.%s_%s%s", goPackage, parser.CamelCase(service.Name),
 			parser.CamelCase(rpc.Name), "Server")
 		buffer, err := util.With("func").Parse(text).Execute(map[string]any{
-			"server":     stringx.From(service.Name).ToCamel(),
-			"logicName":  logicName,
-			"method":     parser.CamelCase(rpc.Name),
-			"request":    fmt.Sprintf("*%s.%s", goPackage, parser.CamelCase(rpc.RequestType)),
-			"response":   fmt.Sprintf("*%s.%s", goPackage, parser.CamelCase(rpc.ReturnsType)),
-			"hasComment": len(comment) > 0,
-			"comment":    comment,
-			"hasReq":     !rpc.StreamsRequest,
-			"stream":     rpc.StreamsRequest || rpc.StreamsReturns,
-			"notStream":  !rpc.StreamsRequest && !rpc.StreamsReturns,
-			"streamBody": streamServer,
-			"logicPkg":   logicPkg,
+			"server":      stringx.From(service.Name).ToCamel(),
+			"logicName":   logicName,
+			"method":      parser.CamelCase(rpc.Name),
+			"request":     fmt.Sprintf("*%s.%s", goPackage, parser.CamelCase(rpc.RequestType)),
+			"response":    fmt.Sprintf("*%s.%s", goPackage, parser.CamelCase(rpc.ReturnsType)),
+			"hasComment":  len(comment) > 0,
+			"comment":     comment,
+			"hasReq":      !rpc.StreamsRequest,
+			"stream":      rpc.StreamsRequest || rpc.StreamsReturns,
+			"notStream":   !rpc.StreamsRequest && !rpc.StreamsReturns,
+			"streamBody":  streamServer,
+			"logicPkg":    logicPkg,
+			"hasLock":     len(key) > 0,
+			"lockKey":     key,
+			"lockTimeout": timeout,
+			"lockPrefix":  prefix,
 		})
 		if err != nil {
 			return nil, err
