@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/suyuan32/goctls/util/stringx"
+	"github.com/zhangbao138208/goctls/util/stringx"
 )
 
 var (

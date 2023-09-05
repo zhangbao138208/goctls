@@ -4,10 +4,10 @@ import (
 	_ "embed"
 	"path/filepath"
 
-	conf "github.com/suyuan32/goctls/config"
-	"github.com/suyuan32/goctls/rpc/parser"
-	"github.com/suyuan32/goctls/util"
-	"github.com/suyuan32/goctls/util/pathx"
+	conf "github.com/zhangbao138208/goctls/config"
+	"github.com/zhangbao138208/goctls/rpc/parser"
+	"github.com/zhangbao138208/goctls/util"
+	"github.com/zhangbao138208/goctls/util/pathx"
 )
 
 //go:embed gitlab.tpl

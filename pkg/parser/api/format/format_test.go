@@ -8,8 +8,8 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/suyuan32/goctls/pkg/parser/api/assertx"
-	"github.com/suyuan32/goctls/pkg/parser/api/parser"
+	"github.com/zhangbao138208/goctls/pkg/parser/api/assertx"
+	"github.com/zhangbao138208/goctls/pkg/parser/api/parser"
 )
 
 type formatData struct {

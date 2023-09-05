@@ -6,9 +6,9 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/suyuan32/goctls/pkg/parser/api/assertx"
-	"github.com/suyuan32/goctls/pkg/parser/api/ast"
-	"github.com/suyuan32/goctls/pkg/parser/api/token"
+	"github.com/zhangbao138208/goctls/pkg/parser/api/assertx"
+	"github.com/zhangbao138208/goctls/pkg/parser/api/ast"
+	"github.com/zhangbao138208/goctls/pkg/parser/api/token"
 )
 
 //go:embed testdata/comment_test.api

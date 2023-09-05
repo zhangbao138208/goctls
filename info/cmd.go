@@ -15,9 +15,9 @@
 package info
 
 import (
-	"github.com/suyuan32/goctls/info/env"
-	"github.com/suyuan32/goctls/info/port"
-	"github.com/suyuan32/goctls/internal/cobrax"
+	"github.com/zhangbao138208/goctls/info/env"
+	"github.com/zhangbao138208/goctls/info/port"
+	"github.com/zhangbao138208/goctls/internal/cobrax"
 )
 
 var (

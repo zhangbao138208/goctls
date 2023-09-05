@@ -3,10 +3,10 @@ package cmd
 import (
 	_ "embed"
 	"fmt"
-	"github.com/suyuan32/goctls/cicd"
-	"github.com/suyuan32/goctls/config"
-	"github.com/suyuan32/goctls/project"
-	"github.com/suyuan32/goctls/upgrade"
+	"github.com/zhangbao138208/goctls/cicd"
+	"github.com/zhangbao138208/goctls/config"
+	"github.com/zhangbao138208/goctls/project"
+	"github.com/zhangbao138208/goctls/upgrade"
 	"os"
 	"runtime"
 	"strings"
@@ -16,18 +16,18 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/withfig/autocomplete-tools/integrations/cobra"
 
-	"github.com/suyuan32/goctls/api"
-	"github.com/suyuan32/goctls/docker"
-	"github.com/suyuan32/goctls/env"
-	"github.com/suyuan32/goctls/extra"
-	"github.com/suyuan32/goctls/frontend"
-	"github.com/suyuan32/goctls/gateway"
-	"github.com/suyuan32/goctls/info"
-	"github.com/suyuan32/goctls/internal/cobrax"
-	"github.com/suyuan32/goctls/internal/version"
-	"github.com/suyuan32/goctls/kube"
-	"github.com/suyuan32/goctls/rpc"
-	"github.com/suyuan32/goctls/tpl"
+	"github.com/zhangbao138208/goctls/api"
+	"github.com/zhangbao138208/goctls/docker"
+	"github.com/zhangbao138208/goctls/env"
+	"github.com/zhangbao138208/goctls/extra"
+	"github.com/zhangbao138208/goctls/frontend"
+	"github.com/zhangbao138208/goctls/gateway"
+	"github.com/zhangbao138208/goctls/info"
+	"github.com/zhangbao138208/goctls/internal/cobrax"
+	"github.com/zhangbao138208/goctls/internal/version"
+	"github.com/zhangbao138208/goctls/kube"
+	"github.com/zhangbao138208/goctls/rpc"
+	"github.com/zhangbao138208/goctls/tpl"
 )
 
 const (
@@ -111,7 +111,7 @@ func init() {
 	})
 
 	rootCmd.Version = fmt.Sprintf(
-		"%s %s/%s - Go Zero %s - Simple Admin Tools %s", version.BuildVersion,
+		"%s %s/%s - Go Zero Scott %s - Simple Admin Tools %s", version.BuildVersion,
 		runtime.GOOS, runtime.GOARCH, config.DefaultGoZeroVersion, config.DefaultToolVersion)
 
 	rootCmd.SetUsageTemplate(usageTpl)

@@ -26,7 +26,7 @@ import (
 	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
 
-	"github.com/suyuan32/goctls/util/format"
+	"github.com/zhangbao138208/goctls/util/format"
 )
 
 //go:embed makefile.tpl

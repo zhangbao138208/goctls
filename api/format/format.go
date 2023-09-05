@@ -12,12 +12,12 @@ import (
 	"strings"
 
 	"github.com/spf13/cobra"
-	"github.com/suyuan32/goctls/api/parser"
-	"github.com/suyuan32/goctls/api/util"
-	"github.com/suyuan32/goctls/pkg/env"
-	apiF "github.com/suyuan32/goctls/pkg/parser/api/format"
-	"github.com/suyuan32/goctls/util/pathx"
 	"github.com/zeromicro/go-zero/core/errorx"
+	"github.com/zhangbao138208/goctls/api/parser"
+	"github.com/zhangbao138208/goctls/api/util"
+	"github.com/zhangbao138208/goctls/pkg/env"
+	apiF "github.com/zhangbao138208/goctls/pkg/parser/api/format"
+	"github.com/zhangbao138208/goctls/util/pathx"
 )
 
 const (

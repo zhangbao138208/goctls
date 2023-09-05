@@ -3,8 +3,8 @@ package upgrade
 import (
 	"errors"
 	"fmt"
-	"github.com/suyuan32/goctls/rpc/execx"
-	"github.com/suyuan32/goctls/util/ctx"
+	"github.com/zhangbao138208/goctls/rpc/execx"
+	"github.com/zhangbao138208/goctls/util/ctx"
 	"os"
 )
 

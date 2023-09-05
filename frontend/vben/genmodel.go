@@ -22,8 +22,8 @@ import (
 
 	"github.com/iancoleman/strcase"
 
-	"github.com/suyuan32/goctls/api/spec"
-	"github.com/suyuan32/goctls/util"
+	"github.com/zhangbao138208/goctls/api/spec"
+	"github.com/zhangbao138208/goctls/util"
 )
 
 func genModel(g *GenContext) error {

@@ -8,8 +8,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/suyuan32/goctls/config"
-	"github.com/suyuan32/goctls/vars"
+	"github.com/zhangbao138208/goctls/config"
+	"github.com/zhangbao138208/goctls/vars"
 )
 
 const (

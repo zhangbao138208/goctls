@@ -4,8 +4,8 @@ import (
 	"errors"
 	"fmt"
 	"github.com/duke-git/lancet/v2/fileutil"
-	"github.com/suyuan32/goctls/config"
-	"github.com/suyuan32/goctls/rpc/execx"
+	"github.com/zhangbao138208/goctls/config"
+	"github.com/zhangbao138208/goctls/rpc/execx"
 	"path/filepath"
 	"strings"
 )

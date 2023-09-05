@@ -6,9 +6,9 @@ import (
 	"path/filepath"
 
 	"github.com/spf13/cobra"
-	"github.com/suyuan32/goctls/internal/cobrax"
-	"github.com/suyuan32/goctls/util/ctx"
-	"github.com/suyuan32/goctls/util/pathx"
+	"github.com/zhangbao138208/goctls/internal/cobrax"
+	"github.com/zhangbao138208/goctls/util/ctx"
+	"github.com/zhangbao138208/goctls/util/pathx"
 )
 
 var (

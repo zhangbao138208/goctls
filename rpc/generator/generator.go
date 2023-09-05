@@ -3,9 +3,9 @@ package generator
 import (
 	"log"
 
-	conf "github.com/suyuan32/goctls/config"
-	"github.com/suyuan32/goctls/env"
-	"github.com/suyuan32/goctls/util/console"
+	conf "github.com/zhangbao138208/goctls/config"
+	"github.com/zhangbao138208/goctls/env"
+	"github.com/zhangbao138208/goctls/util/console"
 )
 
 // Generator defines the environment needs of rpc service generation

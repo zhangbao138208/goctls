@@ -4,8 +4,14 @@ package server
 
 import (
 	{{if .notStream}}"context"{{end}}
+	{{if .hasLock}}
+           "fmt"
+           	"github.com/go-locks/distlock/mutex"
+           	"time"{{end}}
+
 
 	{{.imports}}
+
 )
 
 type {{.server}}Server struct {

@@ -7,13 +7,13 @@ import (
 
 	"github.com/gookit/color"
 
-	"github.com/suyuan32/goctls/extra/ent/template"
-	"github.com/suyuan32/goctls/rpc/execx"
-	proto2 "github.com/suyuan32/goctls/rpc/generator/proto"
-	"github.com/suyuan32/goctls/rpc/parser"
-	"github.com/suyuan32/goctls/util/console"
-	"github.com/suyuan32/goctls/util/ctx"
-	"github.com/suyuan32/goctls/util/pathx"
+	"github.com/zhangbao138208/goctls/extra/ent/template"
+	"github.com/zhangbao138208/goctls/rpc/execx"
+	proto2 "github.com/zhangbao138208/goctls/rpc/generator/proto"
+	"github.com/zhangbao138208/goctls/rpc/parser"
+	"github.com/zhangbao138208/goctls/util/console"
+	"github.com/zhangbao138208/goctls/util/ctx"
+	"github.com/zhangbao138208/goctls/util/pathx"
 )
 
 type ZRpcContext struct {

@@ -8,8 +8,8 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/suyuan32/goctls/pkg/parser/api/assertx"
-	"github.com/suyuan32/goctls/pkg/parser/api/token"
+	"github.com/zhangbao138208/goctls/pkg/parser/api/assertx"
+	"github.com/zhangbao138208/goctls/pkg/parser/api/token"
 )
 
 func Test_readData(t *testing.T) {

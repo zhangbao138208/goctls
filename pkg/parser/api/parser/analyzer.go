@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/suyuan32/goctls/api/spec"
-	"github.com/suyuan32/goctls/pkg/parser/api/ast"
-	"github.com/suyuan32/goctls/pkg/parser/api/placeholder"
-	"github.com/suyuan32/goctls/pkg/parser/api/token"
+	"github.com/zhangbao138208/goctls/api/spec"
+	"github.com/zhangbao138208/goctls/pkg/parser/api/ast"
+	"github.com/zhangbao138208/goctls/pkg/parser/api/placeholder"
+	"github.com/zhangbao138208/goctls/pkg/parser/api/token"
 )
 
 // Analyzer analyzes the ast and converts it to spec.

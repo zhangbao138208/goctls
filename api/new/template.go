@@ -4,7 +4,7 @@ import (
 	_ "embed"
 	"fmt"
 
-	"github.com/suyuan32/goctls/util/pathx"
+	"github.com/zhangbao138208/goctls/util/pathx"
 )
 
 const (

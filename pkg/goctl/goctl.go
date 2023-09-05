@@ -4,10 +4,10 @@ import (
 	"path/filepath"
 	"runtime"
 
-	"github.com/suyuan32/goctls/pkg/golang"
-	"github.com/suyuan32/goctls/util/console"
-	"github.com/suyuan32/goctls/util/pathx"
-	"github.com/suyuan32/goctls/vars"
+	"github.com/zhangbao138208/goctls/pkg/golang"
+	"github.com/zhangbao138208/goctls/util/console"
+	"github.com/zhangbao138208/goctls/util/pathx"
+	"github.com/zhangbao138208/goctls/vars"
 )
 
 func Install(cacheDir, name string, installFn func(dest string) (string, error)) (string, error) {

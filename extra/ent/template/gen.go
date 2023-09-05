@@ -24,10 +24,10 @@ import (
 	"github.com/jedib0t/go-pretty/v6/table"
 	"github.com/spf13/cobra"
 
-	"github.com/suyuan32/goctls/rpc/execx"
-	"github.com/suyuan32/goctls/util/console"
-	"github.com/suyuan32/goctls/util/env"
-	"github.com/suyuan32/goctls/util/pathx"
+	"github.com/zhangbao138208/goctls/rpc/execx"
+	"github.com/zhangbao138208/goctls/util/console"
+	"github.com/zhangbao138208/goctls/util/env"
+	"github.com/zhangbao138208/goctls/util/pathx"
 )
 
 var (

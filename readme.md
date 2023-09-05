@@ -6,7 +6,7 @@
 ## Install | 安装方法
 
 ```shell
-go install github.com/suyuan32/goctls@latest
+go install github.com/zhangbao138208/goctls@latest
 ```
 
 ## Features | 特性

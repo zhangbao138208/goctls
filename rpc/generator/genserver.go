@@ -3,17 +3,16 @@ package generator
 import (
 	_ "embed"
 	"fmt"
+	conf "github.com/zhangbao138208/goctls/config"
+	"github.com/zhangbao138208/goctls/rpc/parser"
+	"github.com/zhangbao138208/goctls/util"
+	"github.com/zhangbao138208/goctls/util/format"
+	"github.com/zhangbao138208/goctls/util/pathx"
+	"github.com/zhangbao138208/goctls/util/stringx"
 	"path/filepath"
 	"strings"
 
 	"github.com/zeromicro/go-zero/core/collection"
-
-	conf "github.com/zeromicro/go-zero/tools/goctl/config"
-	"github.com/zeromicro/go-zero/tools/goctl/rpc/parser"
-	"github.com/zeromicro/go-zero/tools/goctl/util"
-	"github.com/zeromicro/go-zero/tools/goctl/util/format"
-	"github.com/zeromicro/go-zero/tools/goctl/util/pathx"
-	"github.com/zeromicro/go-zero/tools/goctl/util/stringx"
 )
 
 const functionTemplate = `
@@ -22,7 +21,6 @@ func (s *{{.server}}Server) {{.method}} ({{if .notStream}}ctx context.Context,{{
 	{{if .hasLock}}
     mtx,err := s.svcCtx.DLock.NewMutex(	fmt.Sprintf("%v:%v","{{.lockPrefix}}",in.{{.lockKey}}), mutex.Expiry(time.Second*time.Duration({{.lockTimeout}})), mutex.Factor(0.30))
 	if err != nil {
-		logx.WithContext(ctx).Error(err)
 		return nil, err
 	}
 	defer mtx.Unlock()
@@ -116,6 +114,7 @@ func (g *Generator) genServerGroup(ctx DirContext, proto parser.Proto, cfg *conf
 			"imports":   strings.Join(imports.KeysStr(), pathx.NL),
 			"funcs":     strings.Join(funcList, pathx.NL),
 			"notStream": notStream,
+			"hasLock":   HasLock(service),
 		}, serverFile, true); err != nil {
 			return err
 		}

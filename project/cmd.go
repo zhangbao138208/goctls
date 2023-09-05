@@ -1,8 +1,8 @@
 package project
 
 import (
-	"github.com/suyuan32/goctls/internal/cobrax"
-	"github.com/suyuan32/goctls/project/upgrade"
+	"github.com/zhangbao138208/goctls/internal/cobrax"
+	"github.com/zhangbao138208/goctls/project/upgrade"
 )
 
 var (

@@ -1,8 +1,8 @@
 package cicd
 
 import (
-	"github.com/suyuan32/goctls/cicd/drone"
-	"github.com/suyuan32/goctls/internal/cobrax"
+	"github.com/zhangbao138208/goctls/cicd/drone"
+	"github.com/zhangbao138208/goctls/internal/cobrax"
 )
 
 var (

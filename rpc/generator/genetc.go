@@ -6,12 +6,12 @@ import (
 	"path/filepath"
 	"strings"
 
-	conf "github.com/suyuan32/goctls/config"
-	"github.com/suyuan32/goctls/rpc/parser"
-	"github.com/suyuan32/goctls/util"
-	"github.com/suyuan32/goctls/util/format"
-	"github.com/suyuan32/goctls/util/pathx"
-	"github.com/suyuan32/goctls/util/stringx"
+	conf "github.com/zhangbao138208/goctls/config"
+	"github.com/zhangbao138208/goctls/rpc/parser"
+	"github.com/zhangbao138208/goctls/util"
+	"github.com/zhangbao138208/goctls/util/format"
+	"github.com/zhangbao138208/goctls/util/pathx"
+	"github.com/zhangbao138208/goctls/util/stringx"
 )
 
 //go:embed etc.tpl

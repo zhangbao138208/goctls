@@ -26,10 +26,10 @@ import (
 
 	"github.com/iancoleman/strcase"
 
-	"github.com/suyuan32/goctls/api/gogen"
-	conf "github.com/suyuan32/goctls/config"
-	"github.com/suyuan32/goctls/util"
-	"github.com/suyuan32/goctls/util/pathx"
+	"github.com/zhangbao138208/goctls/api/gogen"
+	conf "github.com/zhangbao138208/goctls/config"
+	"github.com/zhangbao138208/goctls/util"
+	"github.com/zhangbao138208/goctls/util/pathx"
 )
 
 var (

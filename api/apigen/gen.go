@@ -10,8 +10,8 @@ import (
 
 	"github.com/gookit/color"
 	"github.com/spf13/cobra"
-	"github.com/suyuan32/goctls/util"
-	"github.com/suyuan32/goctls/util/pathx"
+	"github.com/zhangbao138208/goctls/util"
+	"github.com/zhangbao138208/goctls/util/pathx"
 )
 
 //go:embed api.tpl

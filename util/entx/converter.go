@@ -17,7 +17,7 @@ package entx
 import (
 	"strings"
 
-	"github.com/suyuan32/goctls/rpc/parser"
+	"github.com/zhangbao138208/goctls/rpc/parser"
 )
 
 // ConvertEntTypeToProtoType returns prototype from ent type

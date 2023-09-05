@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/suyuan32/goctls/vars"
+	"github.com/zhangbao138208/goctls/vars"
 )
 
 const (
