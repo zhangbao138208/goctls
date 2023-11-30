@@ -9,7 +9,7 @@ import (
 const DefaultFormat = "go_zero"
 
 // DefaultGoZeroVersion defines the default version of go zero for migrate
-const DefaultGoZeroVersion = "v1.5.5"
+const DefaultGoZeroVersion = "v1.6.2"
 
 // DefaultToolVersion defines the default version of simple admin tools for migrate
 const DefaultToolVersion = "v1.5.16"
