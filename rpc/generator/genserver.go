@@ -48,6 +48,7 @@ func (g *Generator) GenServer(ctx DirContext, proto parser.Proto, cfg *conf.Conf
 }
 
 func (g *Generator) genServerGroup(ctx DirContext, proto parser.Proto, cfg *conf.Config) error {
+	fmt.Println("eee111ee")
 	dir := ctx.GetServer()
 	for _, service := range proto.Service {
 		var serverFile string
@@ -105,6 +106,8 @@ func (g *Generator) genServerGroup(ctx DirContext, proto parser.Proto, cfg *conf
 				break
 			}
 		}
+
+		fmt.Println("eeeee")
 
 		if err = util.With("server").GoFmt(true).Parse(text).SaveTo(map[string]any{
 			"head": head,
@@ -177,6 +180,7 @@ func (g *Generator) genServerInCompatibility(ctx DirContext, proto parser.Proto,
 		"imports":   strings.Join(imports.KeysStr(), pathx.NL),
 		"funcs":     strings.Join(funcList, pathx.NL),
 		"notStream": notStream,
+		"hasLock":   HasLock(service),
 	}, serverFile, true)
 }
 

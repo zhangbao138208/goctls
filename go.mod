@@ -23,7 +23,6 @@ require (
 	github.com/withfig/autocomplete-tools/integrations/cobra v1.2.1
 	github.com/zeromicro/antlr v0.0.1
 	github.com/zeromicro/go-zero v1.5.5
-	github.com/zeromicro/go-zero/tools/goctl v1.5.5
 	golang.org/x/text v0.13.0
 )
 
