@@ -24,7 +24,7 @@ func (s *{{.server}}Server) {{.method}} ({{if .notStream}}ctx context.Context,{{
 		return nil, err
 	}
 	defer mtx.Unlock()
-	ctx, cancel := context.WithCancel(context.TODO())
+	ctx, cancel := context.WithCancel(ctx)
 	defer cancel()
 	mtx.Heartbeat(ctx)
     {{end}}
